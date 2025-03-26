@@ -1,52 +1,71 @@
+/* Importing retro font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: 'Press Start 2P', cursive; /* Apply retro font */
+    color: white;
     text-align: center;
-    background: url("./mario-bg.jpg");
+    background: url("./retrobackground5.jpg");
     background-size: cover;
 }
 
-#board{
+#board {
     width: 540px;
     height: 540px;
-    /*background-color: green;*/
-
     margin: 0 auto;
     display: flex;
-    flex-wrap: wrap; 
-
-    background: url(./soil.png);
-    background-size: cover;
-    border: 3px solid white;
+    flex-wrap: wrap;
+    border: none; /* Removed the white border */
     border-radius: 25px;
+    position: relative;
+    box-sizing: border-box;
+
+    
 }
 
 #board div {
-    /* board = 540x540, divide into 3x3 tiles --> 180x180 per div*/
-    width: 180px;
+    width: 180px; /* Each square is approximately 2 inches */
     height: 180px;
-    background-image: url("./pipe.png");
-    background-size: cover;
+    position: relative;
+    /* Removed the white frames (border) around the tiles */
+    border: 1px solid transparent; /* Optional: make it transparent or none */
 }
 
-#board div img{
-    /* all img tag inside the tile div*/ 
+#board div img {
     width: 100px;
     height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center images in each tile */
+}
 
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-   
+.mole {
+    width: 100px;
+    height: 100px;
+}
+
+.plant {
+    width: 80px;
+    height: 80px;
+}
+
+/* Retro-style font for score and timer */
+#score, #timer {
+    font-family: 'Press Start 2P', cursive;
+    color: yellow; /* A more retro arcade color */
+    text-shadow: 2px 2px 4px #000; /* Retro glowing effect */
 }
 
 #timer {
     position: absolute;
     top: 10px;
     left: 10px;
-    font-size: 2rem; /* Adjust font size as needed */
+    font-size: 1.5rem; /* Adjust font size as needed */
     font-weight: bold;
-    color: #333;
 }
 
+#score {
+    font-size: 2rem; /* Score slightly bigger */
+    margin-top: 20px;
+}
