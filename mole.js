@@ -39,7 +39,7 @@ function setMole(){
         currMoleTile.innerHTML = "";
     }
     let mole = document.createElement("img");
-    mole.src = "./monty-mole.png";
+    mole.src = "./zombie1.png";
     
     let num = getRandomTile();
     let tile = document.getElementById(num);
@@ -56,7 +56,7 @@ function setPlant(){
         return;
     }
     let plant = document.createElement("img");
-    plant.src = "./piranha-plant.png";
+    plant.src = "./police1.png";
     
     // Find a tile that doesn't already have a mole or another plant
     let attempts = 0;
@@ -91,7 +91,7 @@ function selectTile(){
 
     // Add hammer image when a tile is clicked
     let hammer = document.createElement("img");
-    hammer.src = "./hammer.jpeg";
+    hammer.src = "./hammer.png";
     this.appendChild(hammer);
 
     // Remove the hammer image after a short delay
@@ -144,7 +144,7 @@ function goToNextLevel(){
     level++;
 
     // Increase difficulty by decreasing mole interval
-    moleInterval = Math.max(300, moleInterval - 200); // Speed up moles in the next level
+    moleInterval += 200; // Speed up moles in the next level
 
     // Reset score to 0 for the next level
     score = 0;
